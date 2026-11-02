@@ -1,1 +1,146 @@
 
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.tsx'
+
+
+function Data1(props: { img: string; h: string; n: string; btn: string }) {
+  return (
+    <div className='box'>
+       <img src={props.img} alt={props.h} className="box-image" />
+       <div className='box-content'>
+         <h3>{props.h}</h3>
+         <p id="para">{props.n}</p>
+         <button type="button">{props.btn}</button> 
+       </div>
+    </div>
+  )
+}
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <div className="grid-container">
+      <Data1 
+        img="public/idyllic-summer-landscape-clear-mountain-lake-alps-45054687.webp"
+        h="Seamlessly visualize quality" 
+        n="Collaboratively administrate empowered markets via plug-and-play networks." 
+        btn="Here's why" 
+      />
+      <Data1 
+        img="public/images - Copy.jpg"
+        h="Completely Synergize" 
+        n="Dramatically engage seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing." 
+        btn="Here's how" 
+      />
+      <Data1 
+        img="public/images (1) - Copy.jpg"
+        h="Dynamically Procrastinate" 
+        n="Completely synergize resource taxing relationships via premier niche markets." 
+        btn="Read more" 
+      />
+      <Data1 
+        img="public/images (1).jpg"
+        h="Best in class" 
+        n="Imagine jumping into that boat, and just letting it sail wherever the wind takes you..." 
+        btn="Just do it..." 
+      />
+      <Data1 
+        img="public/images (2).jpg"
+        h="Dynamically innovate supply chains" 
+        n="Holistically predominate extensible testing procedures for reliable supply chains." 
+        btn="Here's why" 
+      />
+      <Data1 
+        img="public/images.jpg"
+        h="Sanity check" 
+        n="Objectively innovate empowered manufactured products whereas parallel platforms." 
+        btn="Stop here" 
+      />
+    </div>
+  </StrictMode>,
+)
+
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: 0px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .grid-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.box {
+  background: white;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.box-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.box-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.box h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.25rem;
+  color: #111;
+}
+
+#para {
+  margin: 0 0 20px 0;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.box button {
+  width: 100%;
+  background-color: #7f7f7f;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.box button:hover {
+  background-color: #666666;
+}
